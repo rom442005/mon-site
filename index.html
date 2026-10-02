@@ -1,1 +1,318 @@
-<!doctype html><html lang="fr"><meta charset="utf-8"><title>Romain Bernard</title><h1>Romain Bernard</h1><p>Site en construction.</p></html>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Romain Bernard — Design industriel</title>
+<meta name="description" content="Portfolio de Romain Bernard, étudiant en design industriel transport à l'École de Design Nantes Atlantique. Recherche d'alternance septembre 2026 – juin 2028.">
+<meta property="og:title" content="Romain Bernard — Design industriel">
+<meta property="og:description" content="Portfolio : AEGIS, ALTIS, NORTHLINE. Recherche d'alternance sept. 2026 – juin 2028.">
+<meta property="og:image" content="https://romain-bernard.fr/images/p11.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #111111;
+    --muted: #5c5c5c;
+    --line: #e4e4e4;
+    --accent: #a33232;
+    --teal: #3f8f8c;
+    --soft: #f5f5f5;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 "Lato", system-ui, sans-serif; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3, .brand { font-family: "Krona One", "Arial Black", sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1.15; margin: 0; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  header.nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-size: 15px; text-decoration: none; }
+  .brand span { color: var(--accent); }
+  nav a { text-decoration: none; margin-left: 28px; font-size: 15px; color: var(--muted); }
+  nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 72px 0 40px; display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: center; }
+  .eyebrow { color: var(--accent); font-family: "Krona One", sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+  .hero h1 { font-size: clamp(40px, 6vw, 72px); margin: 14px 0 22px; }
+  .hero p.lead { font-size: 20px; color: var(--muted); margin: 0 0 28px; max-width: 32ch; }
+  .hero p.lead strong { color: var(--ink); }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 22px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 15px; border: 2px solid var(--ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { opacity: .85; }
+  .hero-img { border-left: 4px solid var(--accent); }
+  .rule { height: 10px; background: var(--accent); }
+
+  /* Sections */
+  section { padding: 88px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .sec-title { font-size: clamp(28px, 4vw, 44px); margin-bottom: 40px; }
+
+  /* Project cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { text-decoration: none; display: block; }
+  .card .thumb { aspect-ratio: 4 / 3; overflow: hidden; background: #000; }
+  .card .thumb img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform .5s ease; }
+  .card:hover .thumb img { transform: scale(1.12); }
+  .card h3 { font-size: 22px; margin: 18px 0 6px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* Project detail */
+  .project-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 36px; }
+  .project-head h2 { font-size: clamp(44px, 7vw, 88px); }
+  .project-head .meta { color: var(--muted); font-size: 15px; margin-top: 12px; }
+  .project-head .meta b { color: var(--ink); }
+  .tag { display: inline-block; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; padding: 3px 8px; border: 1px solid var(--line); margin: 0 6px 6px 0; color: var(--muted); }
+  #aegis h2 { color: var(--accent); }
+  #altis h2 { color: var(--teal); }
+  .cover { width: 100%; margin-bottom: 12px; }
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .gallery img { width: 100%; cursor: zoom-in; background: var(--soft); }
+  .gallery img.wide { grid-column: 1 / -1; }
+
+  /* Parcours */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .item { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .item:first-of-type { border-top: 1px solid var(--line); }
+  .item h4 { margin: 0; font-size: 18px; }
+  .item .when { color: var(--accent); font-size: 14px; font-style: italic; }
+  .item p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+  h3.sub { font-size: 18px; margin: 0 0 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+  .chip { background: var(--soft); padding: 6px 12px; font-size: 14px; }
+
+  /* Contact */
+  #contact { background: var(--ink); color: #fff; border: 0; }
+  #contact .sec-title { color: #fff; }
+  #contact p { color: #bdbdbd; font-size: 19px; max-width: 46ch; }
+  #contact .mail { font-family: "Krona One", sans-serif; font-size: clamp(16px, 2.6vw, 28px); color: #fff; text-decoration: none; border-bottom: 3px solid var(--accent); padding-bottom: 4px; word-break: break-all; }
+  footer { background: var(--ink); color: #777; font-size: 13px; padding: 24px 0 40px; }
+
+  /* Lightbox */
+  .lb { position: fixed; inset: 0; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; z-index: 50; padding: 24px; cursor: zoom-out; }
+  .lb.open { display: flex; }
+  .lb img { max-height: 92vh; max-width: 96vw; }
+
+  @media (max-width: 860px) {
+    nav a { margin-left: 16px; font-size: 14px; }
+    nav a.hide-sm { display: none; }
+    .hero, .project-head, .cols { grid-template-columns: 1fr; gap: 28px; }
+    .hero { padding-top: 40px; }
+    .hero-img { order: -1; }
+    .cards { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; }
+    section { padding: 64px 0; }
+    .wrap { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Romain <span>Bernard</span></a>
+    <nav>
+      <a href="#projets">Projets</a>
+      <a href="#parcours" class="hide-sm">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Design industriel · Transport</div>
+      <h1>Romain<br>Bernard</h1>
+      <p class="lead">Étudiant en 3<sup>e</sup> année à l'École de Design Nantes Atlantique, je recherche une <strong>alternance de 2 ans (sept. 2026 – juin 2028)</strong>.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projets">Voir les projets</a>
+        <a class="btn" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <img class="hero-img" src="images/hero.jpg" alt="Romain Bernard assemblant la maquette imprimée en 3D de la moto AEGIS">
+  </div>
+  <div class="rule"></div>
+
+  <section id="projets">
+    <div class="wrap">
+      <h2 class="sec-title">Projets</h2>
+      <div class="cards">
+        <a class="card" href="#aegis">
+          <div class="thumb"><img src="images/p11.jpg" alt="Moto AEGIS sur une route forestière"></div>
+          <h3>AEGIS</h3>
+          <p>Moto centrée sur la sécurité du pilote</p>
+        </a>
+        <a class="card" href="#altis">
+          <div class="thumb"><img src="images/p22.jpg" alt="Vélo de course ALTIS en studio"></div>
+          <h3>ALTIS</h3>
+          <p>Vélo de course repensé par la posture</p>
+        </a>
+        <a class="card" href="#northline">
+          <div class="thumb"><img src="images/p28.jpg" alt="Tramway NORTHLINE sur un pont enneigé"></div>
+          <h3>NORTHLINE</h3>
+          <p>Tramway pour la ville de Harbin</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="aegis">
+    <div class="wrap">
+      <div class="project-head">
+        <div>
+          <h2>AEGIS</h2>
+          <div class="meta"><b>Projet académique</b> · Octobre 2025 – février 2026</div>
+        </div>
+        <div>
+          <p>Concept de moto pensé autour de la sécurité : protection, visibilité et stabilité réunies dans une même expérience de conduite. Une capsule dorsale éjecte des airbags autour du dos et du thorax en cas de choc, et un appui sternal réglable soutient le pilote. Le projet a abouti à une maquette réalisée en impression 3D, avec un travail de matériaux et de finitions réalistes.</p>
+          <span class="tag">Blender</span><span class="tag">Photoshop</span><span class="tag">Impression 3D</span>
+        </div>
+      </div>
+      <img class="cover" src="images/cover-aegis.jpg" alt="Vue aérienne de la moto AEGIS sur une route sinueuse">
+      <div class="gallery">
+        <img src="images/p05.jpg" alt="AEGIS — introduction et planche de tendances" loading="lazy">
+        <img src="images/p06.jpg" alt="AEGIS — croquis de recherche" loading="lazy">
+        <img src="images/p07.jpg" alt="AEGIS — croquis finaux et recherche d'assise" loading="lazy">
+        <img src="images/p08.jpg" alt="AEGIS — fonctionnement de la capsule airbag" loading="lazy">
+        <img class="wide" src="images/p09.jpg" alt="AEGIS — positions d'appui sternal haute et basse" loading="lazy">
+        <img src="images/p10.jpg" alt="AEGIS — rendu sur route mouillée" loading="lazy">
+        <img src="images/p12.jpg" alt="AEGIS — pilote en virage" loading="lazy">
+        <img src="images/p13.jpg" alt="AEGIS — maquette imprimée en 3D" loading="lazy">
+        <img src="images/p14.jpg" alt="AEGIS — détails de la maquette" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="altis">
+    <div class="wrap">
+      <div class="project-head">
+        <div>
+          <h2>ALTIS</h2>
+          <div class="meta"><b>Projet personnel</b> · Décembre 2025</div>
+        </div>
+        <div>
+          <p>Vélo de course réinventé à partir de la posture et de l'ergonomie du cycliste. Sa silhouette allongée et épurée traduit la vitesse et l'efficacité aérodynamique, de l'idéation jusqu'aux rendus finaux.</p>
+          <span class="tag">Blender</span><span class="tag">Photoshop</span>
+        </div>
+      </div>
+      <img class="cover" src="images/p20.jpg" alt="Gros plan du cadre du vélo ALTIS">
+      <div class="gallery">
+        <img src="images/p16.jpg" alt="ALTIS — introduction et planche de tendances" loading="lazy">
+        <img src="images/p17.jpg" alt="ALTIS — croquis de recherche" loading="lazy">
+        <img class="wide" src="images/p18.jpg" alt="ALTIS — croquis finaux" loading="lazy">
+        <img src="images/p19.jpg" alt="ALTIS — rendu studio" loading="lazy">
+        <img src="images/p21.jpg" alt="ALTIS — vues du dessus" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="northline">
+    <div class="wrap">
+      <div class="project-head">
+        <div>
+          <h2>NORTHLINE</h2>
+          <div class="meta"><b>Workshop</b> · Décembre 2025</div>
+        </div>
+        <div>
+          <p>Contribution au design d'un tramway conçu pour la ville de Harbin et inspiré de son identité architecturale, notamment de son Grand Théâtre. Le projet recherche une cohérence visuelle forte et une intégration naturelle dans la ville. Il est passé par une étape de modelage en clay au 1/9.</p>
+          <span class="tag">Blender</span><span class="tag">Photoshop</span><span class="tag">Clay</span>
+        </div>
+      </div>
+      <img class="cover" src="images/cover-northline.jpg" alt="Faces avant lumineuses du tramway NORTHLINE">
+      <div class="gallery">
+        <img src="images/p24.jpg" alt="NORTHLINE — introduction, Opéra de Harbin" loading="lazy">
+        <img src="images/p25.jpg" alt="NORTHLINE — croquis de recherche" loading="lazy">
+        <img src="images/p26.jpg" alt="NORTHLINE — croquis finaux" loading="lazy">
+        <img src="images/p27.jpg" alt="NORTHLINE — maquette en clay" loading="lazy">
+        <img class="wide" src="images/p31.jpg" alt="NORTHLINE — tramway devant le Grand Théâtre de Harbin" loading="lazy">
+        <img src="images/p29.jpg" alt="NORTHLINE — vue aérienne sur le pont" loading="lazy">
+        <img src="images/p30.jpg" alt="NORTHLINE — vue latérale" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="parcours">
+    <div class="wrap">
+      <h2 class="sec-title">Parcours</h2>
+      <div class="cols">
+        <div>
+          <h3 class="sub">Expérience &amp; projets</h3>
+          <div class="item">
+            <h4>RDT Ingénieurs — Stage</h4>
+            <div class="when">Septembre – octobre 2025</div>
+            <p>Conception de boîtiers de protection imprimés en 3D pour des bancs de test électroniques. Participation à l'amélioration des produits et aux choix d'orientation du projet.</p>
+          </div>
+          <div class="item">
+            <h4>Projet Kart</h4>
+            <div class="when">Janvier – juin 2026</div>
+            <p>Concept de kart modulaire inspiré de la Formule 1, qui repense l'expérience de pilotage autour des sensations.</p>
+          </div>
+          <div class="item">
+            <h4>Workshops clay</h4>
+            <div class="when">2025</div>
+            <p>Tramway pour Harbin au 1/9 et tableau de bord de Citroën Ami à l'identité Alfa Romeo au 1/2. Référent de groupe.</p>
+          </div>
+          <div class="item">
+            <h4>Projet Dirigeable</h4>
+            <div class="when">Mai 2025</div>
+            <p>Dirigeable dédié à l'étude et au suivi de la faune de montagne.</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub">Formation</h3>
+          <div class="item">
+            <h4>Bachelor Design industriel transport</h4>
+            <div class="when">2023 – 2026</div>
+            <p>École de Design Nantes Atlantique</p>
+          </div>
+          <div class="item" style="margin-bottom:36px">
+            <h4>Baccalauréat, spécialités maths et physique-chimie</h4>
+            <div class="when">2020 – 2023</div>
+            <p>Lycée Saint-Dominique, Saint-Herblain. Option maths expertes.</p>
+          </div>
+          <h3 class="sub">Logiciels</h3>
+          <div class="chips">
+            <span class="chip">Blender</span><span class="chip">Fusion 360</span><span class="chip">SolidWorks</span><span class="chip">Rhinoceros</span><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">InDesign</span><span class="chip">Figma</span>
+          </div>
+          <h3 class="sub">Langues</h3>
+          <div class="chips">
+            <span class="chip">Français — natif</span><span class="chip">Anglais — B2</span><span class="chip">Espagnol — A2/B1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="sec-title">Contact</h2>
+      <p>Disponible pour une alternance de 2 ans à partir de septembre 2026. Écrivez-moi pour recevoir mon CV ou en savoir plus sur un projet.</p>
+      <p style="margin-top:32px"><a class="mail" href="mailto:rom.bernard@lecolededesign.com">rom.bernard@lecolededesign.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Romain Bernard</div>
+</footer>
+
+<div class="lb" id="lb"><img alt=""></div>
+<script>
+  const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('.gallery img, .cover').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open'); });
+  });
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>
